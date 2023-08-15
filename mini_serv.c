@@ -7,8 +7,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <sys/select.h>
-//recv and send 
-
 int extract_message(char **buf, char **msg)
 {
 	char	*newbuf;
@@ -35,7 +33,6 @@ int extract_message(char **buf, char **msg)
 	}
 	return (0);
 }
-
 char *str_join(char *buf, char *add)
 {
 	char	*newbuf;
@@ -55,7 +52,6 @@ char *str_join(char *buf, char *add)
 	strcat(newbuf, add);
 	return (newbuf);
 }
-
 int fds[700000],max_fd, fds_count = 0;
 char *msgs[700000];
 char notifMessage[42];
