@@ -99,8 +99,9 @@ void send_message(int fd)
     char *msg;
     while (extract_message(&msgs[fd], &msg))
     {
-        sprintf(notifMessage, "client %d: %s", fds[fd], msg);
+        sprintf(notifMessage, "client %d: ", fds[fd]);
         Notification(fd, notifMessage);
+        Notification(fd, msg);
         free(msg);
     }
 }
